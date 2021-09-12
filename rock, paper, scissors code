@@ -1,0 +1,72 @@
+import random
+
+score = 0
+com_score = 0
+
+while True:
+    print("welcome to the rock, paper, scissors game!")
+    choices = ["rock", "paper", "scissors"]
+
+    computer = random.choice(choices)
+    player = None
+
+
+    while player not in choices:
+        player = input("choose either rock, paper, or scissors: ").lower()
+    if player == computer:
+        print("computer: ", computer)
+        print("player: ", player)
+        print("Tie!")
+        print(f"your score: {str(score)}")
+        print(f"computer score: {str(com_score)}")
+    elif player == "rock":
+        if computer == "paper":
+            print("computer: ", computer)
+            print("player: ", player)
+            print("You lose!")
+            print(f"your score: {str(score)}")
+            com_score +=1
+            print(f"computer score: {str(com_score)}")
+        if computer == "scissors":
+            print("computer: ", computer)
+            print("player: ", player)
+            print("You win!")
+            score += 1
+            print(f"your score: {str(score)}")
+            print(f"computer score: {str(com_score)}")
+    elif player == "paper":
+        if computer == "scissors":
+            print("computer: ", computer)
+            print("player: ", player)
+            print("You lose!")
+            print(f"your score: {str(score)}")
+            com_score += 1
+            print(f"computer score: {str(com_score)}")
+        if computer == "rock":
+            print("computer: ", computer)
+            print("player: ", player)
+            print("You win!")
+            score += 1
+            print(f"your score: {str(score)}")
+            print(f"computer score: {str(com_score)}")
+    elif player == "scissors":
+        if computer == "rock":
+            print("computer: ", computer)
+            print("player: ", player)
+            print("You lose!")
+            print(f"your score: {str(score)}")
+            com_score += 1
+            print(f"computer score: {str(com_score)}")
+        if computer == "paper":
+            print("computer: ", computer)
+            print("player: ", player)
+            print("You win!")
+            score += 1
+            print(f"your score: {str(score)}")
+            print(f"computer score: {str(com_score)}")
+
+    play_again = input("play again?: (yes/no): ").lower()
+
+    if play_again != "yes":
+        break
+print("goodbye!")
